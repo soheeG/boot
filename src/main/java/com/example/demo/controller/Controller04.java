@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
@@ -48,5 +48,34 @@ public class Controller04 {
 		
 		int myage = Integer.parseInt(age);
 		System.out.println("int age :" + myage);
+	}
+	
+	@RequestMapping("link5")
+	public void method05(@RequestParam("score") int score) {
+		System.out.println("score:" + score);
+	}
+	
+	// parameter의 변수명과 query string name 값이 같으면 
+	// @RequestParam의 parameter 변수명 생략 가능
+	@RequestMapping("link6")
+	public void method6(@RequestParam String email) {
+		System.out.println(email);
+	}
+	
+	@RequestMapping("link7")
+	public void method7(@RequestParam int age ) {
+		System.out.println(age);
+	}
+	
+	// any other argument는 @RequestParam으로 간주하기 때문에
+	// @RequestParam 생략 가능
+	@RequestMapping("link8")
+	public void method8(String address) {
+		System.out.println(address);
+	}
+	
+	@RequestMapping("link9")
+	public void method9(double score) {
+		System.out.println(score);
 	}
 }
