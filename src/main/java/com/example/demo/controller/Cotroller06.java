@@ -75,6 +75,53 @@ public class Cotroller06 {
 		System.out.println("9번 메소드 일함");
 		// default view name : /sub6/link9
 	}
+	
+	@RequestMapping("link10")
+	public String method10() {
+		System.out.println("link10 메소드 일함");
+		return null; // forward default view name
+	}
+	
+	// 경로 : /sub6/link11
+	// method11 작성
+	// /WEB-INF/views/sub6/link11.jsp 로 포워드
+
+	/*
+	@RequestMapping("link11")
+	public String method11() {
+		System.out.println("link11 일함");
+		// /WEB-INF/views//sub6 <- 슬래시 2개는 1개로 합쳐짐
+		return "/sub6/link11";
+	}
+	*/
+	
+	@RequestMapping("link11")
+	public String method11() {
+		System.out.println("link11 메소드 일함");
+		return null;
+		/*
+		return "/sub6/link11"; // /WEB-INF/views//sub6 <- 슬래시 2개는 
+		                                                  1개로 합쳐짐
+		 */
+	}
+	
+	/*
+	@RequestMapping("link11")
+	public void method11() {
+		System.out.println("link11 메소드 일함");
+	}
+	*/
+	
+	// 경로 : /sub6/link12?name=park&age=33
+	// method12 작성
+	// 1. request param 수집/가공
+	// 2. business logic (생략)
+	// 3. add attribute(생략)
+	// 4. /WEB-INF/views/sub6/link12.jsp 로 포워드
+	@RequestMapping("link12")
+	public void method12(String name, int age) {
+			
+	}
 }
 	
 	
