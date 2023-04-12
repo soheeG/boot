@@ -7,7 +7,7 @@ import jakarta.servlet.http.*;
 
 @Controller
 @RequestMapping("sub6")
-public class Cotroller06 {
+public class Controller06 {
 
 	@RequestMapping("link1")
 	public String method1() {
