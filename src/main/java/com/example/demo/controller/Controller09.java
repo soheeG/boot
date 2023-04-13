@@ -65,5 +65,11 @@ public class Controller09 {
 		// 4. forward/ redirect
 		// /WEB-INF/views/sub9/link4.jsp로 포워드
 	}
+	
+	// 경로 : /sub9/link5?model=macbook&company=apple&price=150
+	@RequestMapping("link5")
+	public void method5(Dto02 dto) {
+		
+	}
 }
 
