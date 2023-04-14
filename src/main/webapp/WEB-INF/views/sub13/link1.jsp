@@ -11,6 +11,27 @@
 </head>
 <body>
 	<h1>고객 목록</h1>
+	<div>
+	 	<table class="table">
+	 		<thead>
+	 			<tr>
+	 				<th>ID</th>
+	 				<th>NAME</th>
+	 				<th>ADDRESS</th>
+	 			</tr>
+	 		</thead>
+	 		<tbody>
+	 			<c:forEach items="${customerList }" var="customer">
+					<tr>
+						<td>${customer.id }</td>
+						<td>${customer.name }</td>
+						<td>${customer.address }</td>
+					</tr>
+	 			</c:forEach>
+	 		</tbody>
+	 	</table>
+	</div>
+
 	<ul>
 		<c:forEach items="${customerList }" var="customer">
 			<li>${customer.id } : ${customer.name }</li>

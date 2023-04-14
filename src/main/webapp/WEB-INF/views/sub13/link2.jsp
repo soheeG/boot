@@ -11,6 +11,28 @@
 </head>
 <body>
 	<h1>직원 목록</h1>
+	<div>
+		<!-- table.table>thead>tr>th*3^^tbody -->
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>FirstName</th>
+					<th>LastName</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${employeeList }" var="employee">
+					<tr>
+						<td>${employee.id }</td>
+						<td>${employee.firstName }</td>
+						<td>${employee.lastName }</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+	
 	<ul>
 	<c:forEach items="${employeeList }" var="employee">
 		<li>${employee.id }. ${employee.lastName } ${employee.firstName }</li>
