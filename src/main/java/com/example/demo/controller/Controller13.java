@@ -89,6 +89,7 @@ public class Controller13 {
 	}
 	
 	// 경로 : /sub13/link3?id=5
+	// 사용자로 부터 받은 request parameter로 query를 나중에 작성할 수 있음
 	@RequestMapping("link3")
 	public String method3(@RequestParam String id, Model model) throws Exception {
 		List<Customer> list = new ArrayList<>();
@@ -119,5 +120,69 @@ public class Controller13 {
 		model.addAttribute("customerList", list);
 
 		return "/sub13/link1";
+	}
+	
+	@RequestMapping("link4")
+	public String method4(@RequestParam String id, Model model) throws Exception {
+		List<Customer> list = new ArrayList<>();
+		String sql = """
+				SELECT CustomerId, CustomerName, Address
+				FROM Customers
+				WHERE CustomerId = ? """;
+
+		Connection con = DriverManager.getConnection(url, name, password);
+		PreparedStatement stmt = con.prepareStatement(sql);
+		stmt.setString(1, id);
+		ResultSet rs = stmt.executeQuery();
+
+		try (con; stmt; rs;) {
+			while (rs.next()) {
+				Customer customer = new Customer();
+				customer.setId(rs.getInt("customerid"));
+				customer.setAddress(rs.getString("address"));
+				customer.setName(rs.getString("customerName"));
+
+				list.add(customer);
+			}
+
+		}
+
+		model.addAttribute("customerList", list);
+
+		return "/sub13/link1";
+	}
+	
+	//경로 : /sub13/link5?id=3
+	@RequestMapping("link5")
+	public String method5(String id, Model model) throws Exception {
+		List<Employee> list = new ArrayList<>();
+		
+		String sql = """
+				SELECT EmployeeId,
+					   lastName,
+					   firstName
+				FROM Employees
+				WHERE EmployeeId = ?
+				""";
+		
+		Connection con = DriverManager.getConnection(url, name, password);
+		PreparedStatement pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, id);
+		ResultSet rs = pstmt.executeQuery();
+
+		try (con; pstmt; rs;) {
+			while (rs.next()) {
+				Employee employee = new Employee();
+				employee.setId(rs.getInt("employeeId"));
+				employee.setLastName(rs.getString("lastName"));
+				employee.setFirstName(rs.getString("firstName"));
+				
+				list.add(employee);
+			}
+		}
+		
+		model.addAttribute("employeeList", list);
+		
+		return "/sub13/link2";
 	}
 }
