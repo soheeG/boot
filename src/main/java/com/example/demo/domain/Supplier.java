@@ -4,6 +4,7 @@ import lombok.*;
 
 @Data
 public class Supplier {
+	private int id;
 	private String name;
 	private String contactName;
 	private String address;
