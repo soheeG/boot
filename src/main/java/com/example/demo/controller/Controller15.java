@@ -184,4 +184,34 @@ public class Controller15 {
 			}
 			
 		}
+		
+		@RequestMapping("link11")
+		public void method11() {
+			
+		}
+		
+		@RequestMapping("link12")
+		public void method12(Supplier supplier) throws Exception {
+			
+			String sql = """
+					INSERT INTO Supplier
+					(SupplierName, ContactName, Address, City, PostalCode,
+					Country, Phone)
+					VALUES (?,?,?,?,?,?,?)
+					""";
+			try (Connection con = DriverManager.getConnection(url, this.name, password);
+					PreparedStatement pstmt = con.prepareStatement(sql);) {
+				pstmt.setString(1, supplier.getName());
+				pstmt.setString(2, supplier.getContactName());
+				pstmt.setString(3, supplier.getAddress());
+				pstmt.setString(4, supplier.getCity());
+				pstmt.setInt(5, supplier.getPostalCode());
+				pstmt.setString(6, supplier.getCountry());
+				pstmt.setInt(7, supplier.getPhone());
+				
+				int count = pstmt.executeUpdate();
+				System.out.println(count + "개 행 추가됨");
+			}	
+			
+		}
 	}
