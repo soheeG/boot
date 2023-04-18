@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 
+import com.example.demo.domain.*;
+
 @Controller
 @RequestMapping("sub15")
 public class Controller15 {
@@ -127,5 +129,59 @@ public class Controller15 {
 				int count = pstmt.executeUpdate();
 				System.out.println(count + "개 행 추가됨");
 			}
+		}
+		
+		@RequestMapping("link7")
+		public void method7() {
+			
+		}
+		
+		@RequestMapping("link8")
+		public void method8(
+				@RequestParam("name") String name,
+				@RequestParam("city") String city,
+				@RequestParam("country") String country) throws Exception {
+			
+			String sql = """
+					INSERT INTO Suppliers 
+					(SupplierName, City, Country)
+					VALUES (?, ?, ?) 
+					""";
+			
+			try (Connection con = DriverManager.getConnection(url, this.name, password);
+					PreparedStatement pstmt = con.prepareStatement(sql);) {
+				pstmt.setString(1, name);
+				pstmt.setString(2, city);
+				pstmt.setString(3, country);
+				
+				int count = pstmt.executeUpdate();
+				System.out.println(count + "개 행 추가됨");
+			}
+		}
+		
+		@RequestMapping("link9")
+		public void method9() {
+			
+		}
+		
+		@RequestMapping("link10")
+		public void method10(@ModelAttribute("customer") Customer customer) throws Exception {
+			
+			String sql = """
+					INSERT INTO Customers
+					(CustomerName, ContactName, Address)
+					VALUES
+					(?, ?, ?)
+					""";
+			try (Connection con = DriverManager.getConnection(url, this.name, password);
+					PreparedStatement pstmt = con.prepareStatement(sql);) {
+				pstmt.setString(1, customer.getName());
+				pstmt.setString(2, customer.getContactName());
+				pstmt.setString(3, customer.getAddress());
+				
+				int count = pstmt.executeUpdate();
+				System.out.println(count + "개 행 추가됨");
+			}
+			
 		}
 	}
