@@ -62,7 +62,6 @@ public class Controller17 {
 			System.out.println(cnt + "개 행 수정됨");
 
 		}
-
 	}
 
 	@RequestMapping("link3")
@@ -147,6 +146,9 @@ public class Controller17 {
 					CustomerName,
 					ContactName,
 					Address
+					City,
+					PostalCode,
+					Country
 				FROM Customers
 				WHERE CustomerId = ?
 				""";
@@ -159,10 +161,13 @@ public class Controller17 {
 			try (ResultSet rs = pstmt.executeQuery();) {
 				if (rs.next()) {
 					Customer customer = new Customer();
-					customer.setId(rs.getInt("supplierId"));
-					customer.setName(rs.getString("supplierName"));
+					customer.setId(rs.getInt("scustomerId"));
+					customer.setName(rs.getString("customerName"));
 					customer.setContactName(rs.getString("contactName"));
 					customer.setAddress(rs.getString("address"));
+					customer.setCity(rs.getString("city"));
+					customer.setPostalCode(rs.getString("postalCode"));
+					customer.setCountry(rs.getString("country"));
 
 					model.addAttribute("customer", customer);
 				}
@@ -178,6 +183,9 @@ public class Controller17 {
 				SET CustomerName = ?,
 					ContactName = ?,
 					Address = ?
+					City = ?,
+					PostalCode = ?,
+					Country = ?
 				WHERE CustomerId = ?
 				""";
 		
@@ -188,6 +196,10 @@ public class Controller17 {
 			pstmt.setString(1, customer.getName());
 			pstmt.setString(2, customer.getContactName());
 			pstmt.setString(3, customer.getAddress());
+			pstmt.setString(4, customer.getCity());
+			pstmt.setString(5, customer.getPostalCode());
+			pstmt.setString(6, customer.getCountry());
+			pstmt.setInt(7, customer.getId());
 
 			int cnt = pstmt.executeUpdate();
 			System.out.println(customer.getId() + "번 공급자 수정됨");
