@@ -1,0 +1,8 @@
+-- Column 삭제
+DESC MyTable13;
+ALTER TABLE MyTable13 
+DROP COLUMN Col1;
+
+ALTER TABLE MyTable13
+DROP COLUMN Col2;
+DESC MyTable13;
