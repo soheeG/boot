@@ -1,11 +1,16 @@
 package com.example.demo.controller;
 
 import java.sql.*;
+import java.sql.Date;
 import java.time.*;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
+import org.springframework.ui.*;
 import org.springframework.web.bind.annotation.*;
+
+import com.example.demo.domain.*;
 
 @Controller
 @RequestMapping("sub19")
@@ -238,6 +243,155 @@ public class Controller19 {
 			int cnt = pstmt.executeUpdate();
 			System.out.println(cnt + "개 데이터 추가 완료");
 		}
+	}
+	
+	@RequestMapping("link11")
+	public void method11() throws Exception {
+		String sql = """
+				SELECT Title, Published, Price, Updated, Weight
+				FROM MyTable33
+				""";
 		
+		try (
+				Connection con = DriverManager.getConnection(url, username, password);
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);
+				) {
+
+			if (rs.next()) {
+				String title = rs.getString("title");
+				String published = rs.getString("published");
+				String price = rs.getString("price");
+				String updated = rs.getString("updated");
+				String weight = rs.getString("weight");
+				
+				System.out.println("제목:" + title);
+				System.out.println("출판일:" + published);
+				System.out.println("가격:" + price);
+				System.out.println("등록일:" + updated );
+				System.out.println("무게:" + weight);
+			}
+		}
+	}
+	
+	@RequestMapping("link12")
+	public void method12() throws Exception {
+		String sql = """
+				SELECT Title, Published, Price, Updated, Weight
+				FROM MyTable33
+				""";
+		
+		try (
+				Connection con = DriverManager.getConnection(url, username, password);
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);
+				) {
+
+			if (rs.next()) {
+				String title = rs.getString("title");
+				LocalDate published = rs.getDate("published").toLocalDate();
+				Integer price = rs.getInt("price");
+				LocalDateTime updated = rs.getTimestamp("updated").toLocalDateTime();
+				Double weight = rs.getDouble("weight");
+				
+				System.out.println("제목:" + title);
+				System.out.println("출판일:" + published);
+				System.out.println("가격:" + price);
+				System.out.println("등록일:" + updated );
+				System.out.println("무게:" + weight);
+			}
+		}
+	}
+	
+	@RequestMapping("link13")
+	public void method13() throws Exception {
+		String sql = """
+				SELECT Name, Age, Price, Birth, Inserted
+				FROM MyTable32
+				""";
+		
+		try (
+				Connection con = DriverManager.getConnection(url, username, password);
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);
+				) {
+			
+			if (rs.next()) {
+				String name = rs.getString("name");
+				Integer age = rs.getInt("age");
+				Double price = rs.getDouble("price");
+				LocalDate birth = rs.getDate("birth").toLocalDate();
+				LocalDateTime inserted = rs.getTimestamp("inserted").toLocalDateTime();
+				
+				System.out.println("이름:" + name);
+				System.out.println("나이:" + age);
+				System.out.println("가격:" + price);
+				System.out.println("생일:" + birth);
+				System.out.println("등록일:" + inserted);
+			}
+		}
+	}
+	
+	@RequestMapping("link14")
+	public void method14(Model model) throws Exception {
+		// 1. request param 수집 / 가공
+		// 2. business logic (crud)
+		
+		List<Dto05> list = new ArrayList<>();
+		
+		String sql = """
+				SELECT Name, Age, Price, Birth, Inserted
+				FROM MyTable32
+				""";
+		try (
+				Connection con = DriverManager.getConnection(url, username, password);
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);
+				) {
+			
+			while (rs.next()) {
+				Dto05 o = new Dto05();
+				o.setName(rs.getString("name"));
+				o.setAge(rs.getInt("age"));
+				o.setPrice(rs.getDouble("price"));
+				o.setBirth(rs.getDate("birth").toLocalDate());
+				o.setInserted(rs.getTimestamp("inserted").toLocalDateTime());
+				
+				list.add(o);
+			}
+		}
+		// 3. add attribute
+		model.addAttribute("memberList", list);
+		//4. forward / redirect
+	}
+	
+	@RequestMapping("link15")
+	public void method15(Model model) throws Exception {
+		
+		List<Dto06> list = new ArrayList<>();
+		
+		String sql = """
+				SELECT Title, Published, Price, Updated, Weight
+				FROM MyTable33
+				""";
+		
+		try (
+				Connection con = DriverManager.getConnection(url, username, password);
+				Statement stmt = con.createStatement();
+				ResultSet rs = stmt.executeQuery(sql);
+				) {
+			
+			while (rs.next()) {
+				Dto06 o = new Dto06();
+				o.setTitle(rs.getString("title"));
+				o.setPublished(rs.getDate("published").toLocalDate());
+				o.setPrice(rs.getInt("price"));
+				o.setUpdated(rs.getTimestamp("updated").toLocalDateTime());
+				o.getWeight(rs.getDouble("weight"));
+				
+				list.add(o);
+			}
+		}
+		model.addAttribute("bookList", list);
 	}
 }
