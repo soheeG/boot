@@ -76,4 +76,22 @@ public class Controller20 {
 		Dto05 res = mapper.method11();
 		System.out.println(res);
 	}
+	
+	@RequestMapping("link9") 
+	public void method9() {
+		Customer res = mapper.method12();
+		System.out.println(res);
+	}
+	
+	@RequestMapping("link10")
+	public void method10() {
+		Supplier sup = mapper.method13();
+		System.out.println(sup);
+	}
+	
+	@RequestMapping("link11")
+	public void method11() {
+		Employee emp = mapper.method14();
+		System.out.println(emp);
+	}
 }
