@@ -210,17 +210,17 @@ public class Controller19 {
 	
 	@RequestMapping("link10")
 	public void method10(
-			@RequestParam("name") String name,
+			@RequestParam("title") String title,
 			@RequestParam("published") LocalDate published,
 			@RequestParam("price") Integer price,
-			@RequestParam("updated") LocalDate updated,
+			@RequestParam("updated") LocalDateTime updated,
 			@RequestParam("weight") Double weight
 			
 			) throws Exception {
 		
 		String sql = """
 				INSERT INTO MyTable33 
-					(Name, Age, Price, Updated, Weight)
+					(Title, Published, Price, Updated, Weight)
 				VALUES (?, ?, ?, ?, ?)
 				""";
 		
@@ -229,10 +229,10 @@ public class Controller19 {
 				PreparedStatement pstmt = con.prepareStatement(sql);
 				) {
 			
-			pstmt.setString(1, name);
+			pstmt.setString(1, title);
 			pstmt.setDate(2, Date.valueOf(published));
 			pstmt.setInt(3, price);
-			pstmt.setDate(4, Date.valueOf(updated));
+			pstmt.setTimestamp(4, Timestamp.valueOf(updated));
 			pstmt.setDouble(5, weight);
 			
 			int cnt = pstmt.executeUpdate();

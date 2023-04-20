@@ -12,11 +12,11 @@
 <body>
 	<h1>책 정보 입력</h1>
 	<form action="/sub19/link10" method="post">
-		이름 : <input type="text" name="name" /> <br />
+		이름 : <input type="text" name="title" /> <br />
 		출판년도 : <input type="date" name="published" /> <br />
 		가격 : <input type="number"  name="price"/> <br />
-		등록일 : <input type="date" name="updated" /> <br />
-		무게 : <input type="number" nmae="weight" /> <br />
+		등록일 : <input type="datetime-local" name="updated" /> <br />
+		무게 : <input type="number" step="0.001" name="weight" /> <br />
 		<input type="submit" value="등록" />
 	</form>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

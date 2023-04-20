@@ -24,7 +24,7 @@
 	<hr />
 	
 	<form action="/sub19/link8" method="post">
-		이름 : <input type="text" name="name"/> <br />
+		이름 : <input type="text" name="title"/> <br />
 		나이 : <input type="number" name="age"/> <br />
 		가격 : <input type="text" name="price" /> <br />
 		생일 : <input type="date" name="birth"/> <br />
