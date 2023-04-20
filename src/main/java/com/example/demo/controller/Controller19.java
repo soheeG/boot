@@ -387,7 +387,7 @@ public class Controller19 {
 				o.setPublished(rs.getDate("published").toLocalDate());
 				o.setPrice(rs.getInt("price"));
 				o.setUpdated(rs.getTimestamp("updated").toLocalDateTime());
-				o.getWeight(rs.getDouble("weight"));
+				o.setWeight(rs.getDouble("weight"));
 				
 				list.add(o);
 			}
