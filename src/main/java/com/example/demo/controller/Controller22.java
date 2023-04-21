@@ -46,6 +46,78 @@ public class Controller22 {
 		dto.setProp3(33.33);
 		
 		int cnt = mapper.sql3(dto);
-		System.out.println(cnt);
+		System.out.println(cnt + "개 행 입력됨");
+	}
+	
+	@RequestMapping("link5")
+	public void method5() {
+		Dto10 dto = new Dto10();
+		dto.setAge(32);
+		dto.setName("강백호");
+		dto.setScore(99.99);
+		
+		int cnt = mapper.sql4(dto);
+		System.out.println(cnt + "개 행 입력됨");
+	}
+	
+	@RequestMapping("link6")
+	public void method6(@ModelAttribute Dto10 dto) {
+		int cnt = mapper.sql4(dto);
+		System.out.println(cnt + "개 행 입력됨");
+	}
+	
+	// 경로 /sub22/link7?prop1=33&prop2=world&prop3=33.44
+	@RequestMapping("link7")
+	public void method7(@ModelAttribute Dto09 dto) {
+		
+		int cnt = mapper.sql3(dto);
+		System.out.println(cnt + "개 행 입력됨");
+	}
+	
+	@RequestMapping("link8")
+	public void method8() {
+		Dto09 dto1 = new Dto09();
+		Dto10 dto2 = new Dto10();
+		
+		dto1.setProp1(345);
+		dto2.setName("서태웅");
+		dto1.setProp3(99.88);
+		
+		int cnt = mapper.sql5(dto1, dto2);
+		System.out.println(cnt + "개 행 입력됨");
+	}
+	
+	@RequestMapping("link9")
+	public void method9() {
+		Dto09 dto1 = new Dto09();
+		Dto10 dto2 = new Dto10();
+		
+		dto1.setProp1(17);
+		dto2.setAge(45);
+		dto1.setProp2("mysql");
+		dto2.setName("서태웅");
+		dto1.setProp3(41.222);
+		dto2.setScore(86.12);
+		
+		int cnt = mapper.sql6(dto1, dto2);
+		System.out.println(cnt  + "개 행 입력됨");
+	}
+	
+	// /sub22/link10?prop1=7&prop2=lunch&prop3=3.14&age=8&name=song&score=3.14
+	@RequestMapping("link10")
+	public void method10(Dto09 p1, Dto10 p2) {
+		int cnt = mapper.sql6(p1, p2);
+		System.out.println(cnt + "행 입력");
+	}
+	
+	// /sub22/link11?prop2=mybatis&prop3=321
+	@RequestMapping("link11")
+	public String method11(Dto11 dto) {
+		System.out.println("pro1:" + dto.getProp1());
+		int cnt = mapper.sql7(dto);
+		System.out.println(cnt + "행 입력 완료");
+		System.out.println("pro1:" + dto.getProp1());
+		
+		return dto.getProp1() + "번째 데이터 입력 완료";
 	}
 }
