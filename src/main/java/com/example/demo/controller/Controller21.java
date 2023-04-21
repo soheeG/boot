@@ -55,4 +55,10 @@ public class Controller21 {
 		List<Dto08> list = mapper.sql4();
 		list.forEach(System.out::println);
 	}
+
+	@RequestMapping("link5")
+	public void method5(@RequestParam("cid") Integer cid) {
+		List<String> names = mapper.sql5(cid);
+		names.forEach(System.out::println);
+	}
 }

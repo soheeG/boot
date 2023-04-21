@@ -30,4 +30,12 @@ public interface Mapper02 {
 			FROM Products
 			""")
 	List<Dto08> sql4();
+	
+	@Select("""
+			SELECT ProductName
+			FROM Products
+			WHERE CategoryId = #{cid}
+			""")
+	List<String> sql5(Integer cid);
+
 }
