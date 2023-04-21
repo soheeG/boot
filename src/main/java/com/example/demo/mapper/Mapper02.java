@@ -38,4 +38,17 @@ public interface Mapper02 {
 			""")
 	List<String> sql5(Integer cid);
 
+	@Select("""
+			SELECT CustomerName
+			FROM Customers
+			WHERE Country = #{country}
+			""")
+	List<String> sql6(String country);
+	
+	@Select("""
+			SELECT ProductName, Price
+			FROM Products
+			WHERE CategoryId = #{cid}
+			""")
+	List<Dto08> sql7(Integer cid);
 }

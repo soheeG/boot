@@ -61,4 +61,16 @@ public class Controller21 {
 		List<String> names = mapper.sql5(cid);
 		names.forEach(System.out::println);
 	}
+	
+	@RequestMapping("link6")
+	public void method6(@RequestParam("country") String country) {
+		List<String> names = mapper.sql6(country);
+		names.forEach(System.out::println);
+	}
+	
+	@RequestMapping("link7")
+	public void method7(@RequestParam("cid") Integer cid) {
+		List<Dto08> list = mapper.sql7(cid);
+		list.forEach(System.out::println);
+	}
 }
