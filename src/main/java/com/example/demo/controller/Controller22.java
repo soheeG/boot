@@ -122,8 +122,10 @@ public class Controller22 {
 	}
 	
 	// /sub22/link12?age=40&name=son&score=9.9
-	@RequestMapping("sub12")
+	@RequestMapping("link12")
 	public void method12(Dto12 dto) {
 		int cnt = mapper.sql8(dto);
+		System.out.println(cnt + "행 입력 완료");
+		System.out.println(dto.getId() + "번 데이터 입력됨");
 	}
 }

@@ -53,8 +53,8 @@ public interface Mapper03 {
 	int sql7(Dto11 dto);
 	
 	@Insert("""
-			INSERT INTO MyTabel40 (Col2, Col3, Col4)
-			VALUES (#{age}, #{name}, #{scores})
+			INSERT INTO MyTabel40 (age, name, score)
+			VALUES (#{age}, #{name}, #{score})
 			""")
 	@Options(useGeneratedKeys = true, keyProperty = "id")
 	int sql8(Dto12 dto);
