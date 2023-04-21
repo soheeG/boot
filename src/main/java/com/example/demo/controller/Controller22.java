@@ -120,4 +120,10 @@ public class Controller22 {
 		
 		return dto.getProp1() + "번째 데이터 입력 완료";
 	}
+	
+	// /sub22/link12?age=40&name=son&score=9.9
+	@RequestMapping("sub12")
+	public void method12(Dto12 dto) {
+		int cnt = mapper.sql8(dto);
+	}
 }
