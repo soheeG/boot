@@ -67,7 +67,7 @@ public interface Mapper05 {
 				EmployeeId id,
 				LastName,
 				FirstName,
-				Birth,
+				BirthDate birth,
 				Photo,
 				Notes
 			FROM Employees
