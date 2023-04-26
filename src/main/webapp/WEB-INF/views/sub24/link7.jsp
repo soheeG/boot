@@ -18,6 +18,7 @@
 	생일 : <input type="text" name="birth" value="${employee.birth }" /> <br />
 	사진 : <input type="text" name="photo" value="${employee.photo }" /> <br />
 	메모 : <input type="text" name="notes" value="${employee.notes }" /> <br />
+	
 	<input type="submit" value="수정" />
 	</form>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
