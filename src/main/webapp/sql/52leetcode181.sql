@@ -15,3 +15,9 @@ INSERT INTO Employee VALUES (4, 'Max', 90000, NULL);
 SELECT e1.name Employee FROM Employee e1 JOIN Employee e2 
 ON e1.managerId = e2.id
 WHERE e1.salary > e2.salary;
+
+-- 서브 쿼리
+SELECT name FROM Employee e1
+WHERE salary > (SELECT salary 
+				FROM Employee e2
+                WHERE e2.id = e1.managerId);
