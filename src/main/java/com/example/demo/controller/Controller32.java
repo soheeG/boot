@@ -36,6 +36,7 @@ public class Controller32 {
 		AwsCredentials credentials = AwsBasicCredentials.create(accessKey, secretKey);
 		AwsCredentialsProvider provider = StaticCredentialsProvider.create(credentials);
 		Region region = Region.AP_NORTHEAST_2;
+		String bucketName = "bucket-prj1";
 
 		this.s3 = S3Client.builder()
 				.credentialsProvider(provider)
@@ -85,7 +86,7 @@ public class Controller32 {
 	public void method4(@RequestParam("files") MultipartFile[] files) throws Exception {
 		// aws s3 업로드
 		for (MultipartFile file : files) {
-			
+		
 			if (file.getSize() > 0) {
 				String key = "test/" + file.getOriginalFilename();
 				PutObjectRequest por = PutObjectRequest.builder()
@@ -108,6 +109,6 @@ public class Controller32 {
 				.bucket(bucketName)
 				.build();
 		
-		
+		s3.deleteObject(dor);
 	}
 }

@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>파일 업로드 연습</h1>
-	<form action="/sub32/link4" method="post" enctye="multipart/form-data">
+	<form action="/sub32/link4" method="post" enctype="multipart/form-data">
 		<input type="file" name-="files" multiple accept="image/*" />
 			
 		<input type="submit" value="전송" />
