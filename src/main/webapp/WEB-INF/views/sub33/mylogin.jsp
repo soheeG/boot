@@ -17,7 +17,7 @@
 	<form method="post">
 		아이디<input type="text" name="id" /> <br />
 		암호<input type="password" name="pw" /> <br />
-		<input type="summit" value="로그인"/>
+		<input type="submit" value="로그인"/>
 		
 		<sec:csrfInput />
 		
