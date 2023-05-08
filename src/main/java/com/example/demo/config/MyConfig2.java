@@ -33,13 +33,22 @@ public class MyConfig2 {
 	
 	@Bean
 	public UserDetailsService userDetailsService() {
-		UserBuilder users = User.withDefaultPasswordEncoder();
-		UserDetails user1 = users.username("user1")
-				.password("pw1")
+		PasswordEncoder encoder = passwordEncoder();
+		
+		String pw1 = encoder.encode("pw1");
+		String pw2 = encoder.encode("pw2");
+		
+		System.out.println("pw1:" + pw1);
+		System.out.println("pw2:" + pw2);
+
+		UserDetails user1 = User.builder()
+				.username("user1")
+				.password(pw1)
 				.authorities(List.of())
 				.build();
-		UserDetails user2 = users.username("user2")
-				.password("pw2")
+		UserDetails user2 =  User.builder()
+				.username("user2")
+				.password(pw2)
 				.authorities(List.of())
 				.build();
 		

@@ -62,6 +62,7 @@ public class Controller17 {
 			System.out.println(cnt + "개 행 수정됨");
 
 		}
+
 	}
 
 	@RequestMapping("link3")
@@ -87,9 +88,9 @@ public class Controller17 {
 			pstmt.setString(2, supplier.getContactName());
 			pstmt.setString(3, supplier.getAddress());
 			pstmt.setString(4, supplier.getCity());
-			pstmt.setInt(5, supplier.getPostalCode());
+			pstmt.setString(5, supplier.getPostalCode());
 			pstmt.setString(6, supplier.getCountry());
-			pstmt.setInt(7, supplier.getPhone());
+			pstmt.setString(7, supplier.getPhone());
 			pstmt.setInt(8, supplier.getId());
 
 			int cnt = pstmt.executeUpdate();
@@ -128,24 +129,28 @@ public class Controller17 {
 					supplier.setContactName(rs.getString("contactName"));
 					supplier.setAddress(rs.getString("address"));
 					supplier.setCity(rs.getString("city"));
-					supplier.setPostalCode(rs.getInt("postalCode"));
+					supplier.setPostalCode(rs.getString("postalCode"));
 					supplier.setCountry(rs.getString("country"));
-					supplier.setPhone(rs.getInt("phone"));
+					supplier.setPhone(rs.getString("phone"));
 					model.addAttribute("supplier", supplier);
 				}
+
 			}
+
 		}
 	}
-	
-	//고객 조회
+
+	// ?id=103
+	// 고객조회 (method4 참고)
 	@RequestMapping("link5")
 	public void method5(int id, Model model) throws Exception {
+		// 고객 조회
 		String sql = """
 				SELECT
 					CustomerId,
 					CustomerName,
 					ContactName,
-					Address
+					Address,
 					City,
 					PostalCode,
 					Country
@@ -153,46 +158,50 @@ public class Controller17 {
 				WHERE CustomerId = ?
 				""";
 		try (
-				Connection con = DriverManager.getConnection(url, username
-						, password);
+				Connection con = DriverManager.getConnection(url, username, password);
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
-			
 			pstmt.setInt(1, id);
 			try (ResultSet rs = pstmt.executeQuery();) {
-				if (rs.next()) {
-					Customer customer = new Customer();
-					customer.setId(rs.getInt("scustomerId"));
-					customer.setName(rs.getString("customerName"));
-					customer.setContactName(rs.getString("contactName"));
-					customer.setAddress(rs.getString("address"));
-					customer.setCity(rs.getString("city"));
-					customer.setPostalCode(rs.getString("postalCode"));
-					customer.setCountry(rs.getString("country"));
 
-					model.addAttribute("customer", customer);
+				if (rs.next()) {
+					Customer c = new Customer();
+					c.setId(rs.getInt("customerId"));
+					c.setName(rs.getString("customerName"));
+					c.setContactName(rs.getString("contactName"));
+					c.setAddress(rs.getString("address"));
+					c.setCity(rs.getString("city"));
+					c.setPostalCode(rs.getString("postalCode"));
+					c.setCountry(rs.getString("country"));
+
+					model.addAttribute("customer", c);
+
 				}
 			}
 		}
+
+		// forward jsp
 	}
-	
-	// 고객정보 수정
+
+	// 고객정보 수정 (method3 참고)
 	@RequestMapping("link6")
 	public void method6(Customer customer) throws Exception {
 		String sql = """
 				UPDATE Customers
-				SET CustomerName = ?,
-					ContactName = ?,
-					Address = ?
-					City = ?,
-					PostalCode = ?,
-					Country = ?
-				WHERE CustomerId = ?
+				SET
+					customerName = ?,
+					contactName = ?,
+					address = ?,
+					city = ?,
+					postalCode = ?,
+					country = ?
+				WHERE
+					customerId = ?
 				""";
-		
 		try (
+
 				Connection con = DriverManager.getConnection(url, username, password);
 				PreparedStatement pstmt = con.prepareStatement(sql);) {
-			
+
 			pstmt.setString(1, customer.getName());
 			pstmt.setString(2, customer.getContactName());
 			pstmt.setString(3, customer.getAddress());
@@ -202,8 +211,7 @@ public class Controller17 {
 			pstmt.setInt(7, customer.getId());
 
 			int cnt = pstmt.executeUpdate();
-			System.out.println(customer.getId() + "번 공급자 수정됨");
-
+			System.out.println(customer.getId() + "번 고객 수정됨");
 		}
 
 	}
