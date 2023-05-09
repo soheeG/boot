@@ -19,7 +19,7 @@ public class MyConfig2 {
 		
 		http.formLogin()
 			.defaultSuccessUrl("/sub33/mylogin")
-			.defaultSuccessUrl("/list", true)
+			.defaultSuccessUrl("sub33/loginSuccess", true)
 			.usernameParameter("id") // 기본값 username
 			.passwordParameter("pw"); // 기본값 password
 	
