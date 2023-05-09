@@ -24,4 +24,9 @@ public class Controller33 {
 		System.out.println(authentication);
 		System.out.println(authentication.getName());
 	}
+	
+	@GetMapping("customCheck")
+	public void customCheck() {
+		System.out.println("customCheck 메소드 실행 중");
+	}
 }
