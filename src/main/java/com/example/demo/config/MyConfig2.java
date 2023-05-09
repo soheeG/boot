@@ -3,6 +3,7 @@ package com.example.demo.config;
 import java.util.*;
 
 import org.springframework.context.annotation.*;
+import org.springframework.security.config.annotation.method.configuration.*;
 import org.springframework.security.config.annotation.web.builders.*;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.security.core.userdetails.User.*;
@@ -13,6 +14,7 @@ import org.springframework.security.web.*;
 import org.springframework.security.web.access.expression.*;
 
 @Configuration
+@EnableMethodSecurity
 public class MyConfig2 {
 
 	@Bean
