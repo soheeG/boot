@@ -20,8 +20,22 @@
 	<br />
 	<button id="btn4">배열 전송2</button>
 	<br />
-		<button id="btn4">객체 전송</button>
+	<button id="btn4">객체 전송</button>
 	<br />
+	<button id="btn6">객체 전송2</button>
+	
+	<hr />
+	<input type="text" id="inputNmae" placeholder="이름" /> <br />
+	<input type="text" id="inputAge" placeholer="나이"/> <br />
+	<button id="btn8">전송</button>
+	
+	<hr />
+	<input type="text" id="inputName" placeholder="이름" /> <br />
+	<input type="text" id="inputEmail" placeholder="이메일" /> <br />
+	<input type="text" id="inputScore" placeholder="점수" /> <br />
+	<input type="text" id="inputMarried" placeholder="혼인여부" /> <br />
+	<button id="btn9">전송</button>
+	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="/js/sub36/ajax.js"></script>

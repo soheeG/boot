@@ -62,14 +62,34 @@ public class Controller36 {
 		System.out.println(dto.getPhone().get(2));
 	}
 	
+	@Data
 	static class Dto5 {
 		private String title;
 		private String publisher;
-		private Map<String, Object> writer;
+		// 객체는 Map 혹은 JavaBean으로 생성
+//		private Map<String, Object> writer;
+		private Dto1 Writer;
 	}
 	
 	@RequestMapping("link5")
 	public void method5(@RequestBody Dto5 dto) {
 		System.out.println(dto);
+	}
+	
+	@Data
+	static class Dto6 {
+		private String city;
+		private String price;
+		private Dto2 etc;
+	}
+	
+	@PostMapping("link6")
+	public void method6(@RequestBody Dto6 dto) {
+		System.out.println(dto);
+	}
+	
+	@PostMapping("link7")
+	public void method6(@RequestBody List<Dto1> dto) {
+		dto.forEach(System.out::println);
 	}
 }

@@ -75,3 +75,80 @@ $("#btn5").click(function() {
 		data: JSON.stringify(data)
 	});
 });
+
+$("#btn6").click(function() {
+	const data = {
+		city: "Incheon",
+		price: 4000,
+		etc: {
+			name: "문동은",
+			email: "Yeonjin@google.com",
+			score: 100.00,
+			married: false
+		}
+	};
+	
+	$.ajax("/sub36/link6", {
+		method: "post",
+		contentType: "application/json",
+		data: JSON.stringify(data)
+	});
+});
+
+$("#btn7").click(function() {
+	const data =[
+		{
+			name: "이강인",
+			age: 22
+		},
+		{	name: "김민재",
+			age: 28
+		},
+		{
+			name: "황희찬",
+			age: 27
+		}
+		]
+	
+	$.ajax("/sub36/link7", {
+		method: "post",
+		contentType: "application/json",
+		data: JSON.stringify(data)
+	});
+});
+
+$("#btn8").click(function() {
+	const name = $("#inputName").val();
+	const age = $("#inputAge").val();
+	
+	const data = {
+		name: name,
+		age: age
+	};
+	
+	$.ajax("/sub36/link1", {
+		method: "post",
+		contentType: "application/json",
+		data: JSON.stringify(data)
+	});
+});
+
+$("#btn9").click(function() {
+	const name = $("#inputName").val();
+	const email = $("#inputEmail").val();
+	const score = $("#inputScore").val();
+	const married = $("#inputMarried").val();
+	
+	const data = {
+		name: name,
+		email: email,
+		score: score,
+		married: married
+	};
+	
+	$.ajax("/sub36/link2", {
+		method: "post",
+		contentType: "application/json",
+		data: JSON.stringify(data)
+	});
+});
