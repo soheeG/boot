@@ -41,3 +41,43 @@ $("#button7").click(function() {
 		contentType: "application/json"
 	});
 });
+
+$("#button8").click(function() {
+	$.ajax("/sub35/link8", {
+		method: "post",
+		data: '{"address" : "busan", "name" : "박지성"}',
+		contentType : "application/json"
+	});
+});
+
+$("#button9").click(function() {
+	$.ajax("/sub35/link9", {
+		method: "post",
+		contentType: "application/json",
+		data: `{"age" : "32", "name" : "son", "marreid" : "false"}`
+	});
+});
+
+$("#button10").click(function() {
+	$.ajax("/sub35/link10", {
+	method: "post",
+	contentType: "application/json",
+	data : `{"address" : null, "age" : 30, "name" : "손흥민"}`
+	});
+});
+
+$("#button11").click(function() {
+	$.ajax("/sub35/link11", {
+		method: "post",
+		contentType: "application/json",
+		data: '{"book" : {"title" : "java", "price" : 30000}, "address" : "seoul"}'
+	});
+});
+
+$("#button12").click(function() {
+	$.ajax("/sub35/link12", {
+		method: "post",
+		contentType: "applicatin/json",
+		data: `{"food" : ["pizza", "coke", "coffee"], "store" : "피자스쿨"}`
+	});
+});

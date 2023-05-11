@@ -70,4 +70,49 @@ public class Controller35 {
 		System.out.println("메소드7 실행됨");
 		System.out.println(map);
 	}
+	
+	@GetMapping("link8")
+	public void method8(@RequestBody Map data) {
+		System.out.println(data.get("adderss"));
+		System.out.println(data.get("name"));
+	}
+	
+	@GetMapping("link9")
+	public void method9(@RequestBody Map data) {
+		System.out.println(data.get("age"));
+		System.out.println(data.get("name"));
+		System.out.println(data.get("married"));
+		
+		System.out.println(data.get("age").getClass().getSimpleName());
+		System.out.println(data.get("name").getClass().getSimpleName());
+		System.out.println(data.get("married").getClass().getSimpleName());
+	}
+	
+	@GetMapping("link10")
+	public void method10(@RequestBody Map<String, Object> map) {
+		System.out.println(map);
+	}
+	 // 객체
+	@GetMapping("link11")
+	public void method11(@RequestBody Map<String, Object> map) {
+		System.out.println(map);
+		System.out.println(map.get("book"));
+		System.out.println(map.get("book").getClass().getSimpleName());
+		
+		Map<String, Object> book = (Map<String, Object>) map.get("book");
+		System.out.println(book.get("title"));
+		System.out.println(book.get("price"));
+	}
+	
+	// 배열
+	@GetMapping("link12")
+	public void method12(@RequestBody Map<String, Object> map) {
+		System.out.println(map);
+		System.out.println(map.get("food").getClass().getSimpleName());
+		
+		ArrayList<Object> foods = (ArrayList<Object>) map.get("food");
+		System.out.println(foods.get(0));
+		System.out.println(foods.get(1));
+		System.out.println(foods.get(2));
+	}
 }

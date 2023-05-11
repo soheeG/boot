@@ -31,7 +31,22 @@
 		<button id="button6">데이터를 자바빈으로 받기</button>
 	</div>
 	<div>
-		<button id="button7">json 형식 데이터 봼</button>
+		<button id="button7">json 형식 데이터 전송</button>
+	</div>
+	<div>
+		<button id="button8">json 형식 데이터 전송</button>
+	</div>
+	<div>
+		<button id="button9">json 형식 데이터 전송</button>
+	</div>
+	<div>
+		<button id="button10">null 값의 json 데이터 전송</button>
+	</div>
+	<div>
+		<button id="button11">객체 값을 가진 json 데이터 전송</button>
+	</div>
+	<div>
+		<button id="button12">배열 값을 가진 json 데이터 전송</button>
 	</div>
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
