@@ -28,3 +28,4 @@ SELECT * FROM MyTable10;
 USE test;
 SELECT * FROM MyTable10; -- 현재 DATABASE 
 SELECT * FROM w3schools.MyTable10; -- 다른 DB
+

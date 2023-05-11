@@ -10,13 +10,18 @@ WHERE Country = 'Brazil';
 -- DISTINCT : 중복제거
 SELECT Country FROM Customers; -- 91개
 SELECT DISTINCT Country FROM Customers; -- 21개
-SELECT DISTINCT Country FROM Customers;
-SELECT COUNT(DISTINCT Country) FROM Customers;
+SELECT DISTINCT Country 
+FROM Customers
+ORDER BY 1;
+SELECT DISTINCT Country 
+FROM Customers
+ORDER BY Country;
 
--- 전체 직원 수
-SELECT COUNT(EmployeeID) FROM Employees;
+-- 전체 직원 수SELECT COUNT(EmployeeID) FROM Employees;
+
 -- 상파울로에 사는 고객 수 
 SELECT COUNT(CustomerID) FROM Customers WHERE City = 'São Paulo' ;
+
 -- 공급자가 있는 나라 수 (중복제거)
 SELECT COUNT(DISTINCT Country) FROM Suppliers;
 

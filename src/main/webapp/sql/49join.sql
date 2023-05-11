@@ -78,3 +78,4 @@ FROM
              JOIN Products p ON od.ProductID = p.ProductID
 GROUP BY c.CustomerID
 ORDER BY 구매금액 DESC;
+

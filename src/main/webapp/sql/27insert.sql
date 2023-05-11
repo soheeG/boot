@@ -21,3 +21,7 @@ DESC Suppliers;
 INSERT INTO Suppliers (SupplierName, City)
 VALUES ('강백호', 'seoul');
 SELECT * FROM Suppliers ORDER BY 1 DESC;
+
+SELECT * FROM Employees ORDER BY 1 DESC;
+
+

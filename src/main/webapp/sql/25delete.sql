@@ -21,3 +21,16 @@ DELETE FROM Products w3schools WHERE ProductID = 78;
 -- 79번 상품 지우기
 SELECT * FROM Products WHERE ProductID = 79;
 DELETE FROM Products w3schools WHERE ProductID = 79;
+
+DELETE FROM Products
+WHERE CategoryID = 1;
+
+DELETE FROM Products;
+
+-- 고객 테이블에서 USA에 사는 고객들 지우기
+SELECT * FROM Customers WHERE Country = 'USA';
+DELETE FROM Customers WHERE Country = 'USA';
+
+-- 모든 직원 지우기
+SELECT * FROM Employees;
+DELETE FROM Employees;

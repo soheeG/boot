@@ -27,3 +27,14 @@ ADD FOREIGN KEY (ShipperID)
 REFERENCES Shippers(ShipperId);
 DESC Shippers;
 DESC Suppliers;
+
+SELECT * FROM Products
+WHERE ProductId = 1;
+SELECT * FROM Categories
+WHERE CategoryId = 1;
+
+SELECT * FROM Products JOIN Categories ON
+Products.CategoryId = Categories.CategoryId
+WHERE Products.ProductId = 1;
+
+

@@ -52,3 +52,6 @@ Order BY 4, 3;
 SELECT * FROM Customers ORDER BY Country ASC, City DESC;
 SELECT * FROM Customers ORDER BY Country DESC, City ASC;
 SELECT * FROM Customers ORDER BY Country DESC, City DESC;
+
+-- 상품을 카테고리(오름차순) 가격(내림차순)으로 정렬 조회
+SELECT * FROM Products ORDER BY CategoryID ASC, Price DESC;

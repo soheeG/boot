@@ -106,13 +106,15 @@ INSERT INTO MyTable09 (Name, Gender, BirthDate, Score, Extra)
 VALUES ('손흥민', '여', '2000-02-02', 99.99, '축구선수');
 SELECT * FROM MyTable09;
 
+-- 책 정보 
 CREATE TABLE MyTable10 (
 	Title VARCHAR(20),
     Writer VARCHAR(20),
     Publisher VARCHAR(20),
+    Published DATE,
     Price INT
 );
-INSERT INTO MyTable10 (Title, Writer, Publisher, Price)
-VALUES ('이것이 자바다', '최범균', '한빛미디어', 30000);
+INSERT INTO MyTable10 (Title, Writer, Publisher, Published, Price)
+VALUES ('이것이 자바다', '최범균', '한빛미디어', '2022-01-01', 30000);
 SELECT * FROM MyTable10;
 

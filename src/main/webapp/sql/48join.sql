@@ -14,3 +14,4 @@ ON o.EmployeeID = e.EmployeeID
 WHERE o.OrderId IS NULL;
 
 SELECT * FROM Orders;
+
