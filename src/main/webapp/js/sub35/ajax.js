@@ -81,3 +81,18 @@ $("#button12").click(function() {
 		data: `{"food" : ["pizza", "coke", "coffee"], "store" : "피자스쿨"}`
 	});
 });
+
+$("#button13").click(function() {
+	$.ajax("/sub35/link", {
+		method: "post",
+		contentType: "applicatiin/json",
+		data: `["pizza", "coke", "coffe"]`
+	});
+});
+$("#button14").click(function() {
+	$.ajax("/sub35/link", {
+		method: "post",
+		contentType: "applicatiin/json",
+		data: `[{"name" : "강백호", "position" : "파포"}, {"name" : "서태웅", "position" : "스포}]`
+	});
+});

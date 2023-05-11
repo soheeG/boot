@@ -115,4 +115,16 @@ public class Controller35 {
 		System.out.println(foods.get(1));
 		System.out.println(foods.get(2));
 	}
+	
+	// [pizza, coke, coffe]
+	@PostMapping("link13")
+	public void method13(@RequestBody List<Object> data) {
+		System.out.println(data);
+	}
+	
+	// [{"name" : "강백호", "position" : "파포"}, {"name" : "서태웅", "position" : "스포}]
+	@RequestMapping("link14")
+	public void method14(@RequestBody List<Map<String, Object>> data) {
+		System.out.println(data);
+	}
 }
