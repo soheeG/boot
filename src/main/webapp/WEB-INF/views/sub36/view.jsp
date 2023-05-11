@@ -30,7 +30,7 @@
 	<button id="btn8">전송</button>
 	
 	<hr />
-	<input type="text" id="inputName" placeholder="이름" /> <br />
+	<input type="text" id="inputName2" placeholder="이름" /> <br />
 	<input type="text" id="inputEmail" placeholder="이메일" /> <br />
 	<input type="text" id="inputScore" placeholder="점수" /> <br />
 	<input type="text" id="inputMarried" placeholder="혼인여부" /> <br />

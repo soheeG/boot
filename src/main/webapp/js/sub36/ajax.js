@@ -134,7 +134,7 @@ $("#btn8").click(function() {
 });
 
 $("#btn9").click(function() {
-	const name = $("#inputName").val();
+	const name = $("#inputName2").val();
 	const email = $("#inputEmail").val();
 	const score = $("#inputScore").val();
 	const married = $("#inputMarried").val();
