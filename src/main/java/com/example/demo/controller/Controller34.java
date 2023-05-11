@@ -74,5 +74,6 @@ public class Controller34 {
 	@GetMapping("link8")
 	public void method8(Dto2 dto) {
 		System.out.println(dto);
+//		service.add(dto);
 	}
 }
