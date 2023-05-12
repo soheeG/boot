@@ -33,7 +33,7 @@
 	<input type="text" id="inputName2" placeholder="이름" /> <br />
 	<input type="text" id="inputEmail" placeholder="이메일" /> <br />
 	<input type="text" id="inputScore" placeholder="점수" /> <br />
-	<input type="text" id="inputMarried" placeholder="혼인여부" /> <br />
+	혼인여부<input type="checkbox" id="inputMarried" /> <br />
 	<button id="btn9">전송</button>
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
