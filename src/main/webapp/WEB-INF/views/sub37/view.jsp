@@ -15,13 +15,29 @@
 	<div>
 		<button id="btn1">ajax 요청</button>
 	</div>
-	
 	<div>
 		<button id="btn2">응답코드 연습</button>
 	</div>
-	
-	div>
+	<div>
 		<button id="btn3">응답코드 연습</button>
+	</div>
+	<div>
+		<button id="btn4">응답 헤더 연습</button>
+	</div>
+	<div>
+		<button id="btn5">응답 본문 연습</button>
+	</div>
+	<div>
+		<button id="btn6">응답 본문 연습</button>
+	</div>
+	<div>
+		<button id="btn7">응답 본문(현재 날짜) 연습</button>
+	</div>
+	<div>
+		<button id="btn8">응답 본문(날짜 시간)</button>
+	</div>
+	<div>
+		<button id="btn9">응답 본문(현재 시간) 연습</button>
 	</div>
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
