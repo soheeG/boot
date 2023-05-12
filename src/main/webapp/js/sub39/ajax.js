@@ -134,3 +134,53 @@ $("#btn13").click(function() {
 		}
 	});
 });
+
+$("#btn14").click(function() {
+	const cid = $("#categoryIdInput").val();
+	$.ajax("/sub39/link14?cid=" + cid, {
+		success: function(data) {
+			$("#res14").empty();
+			for (let i = 0; i < data.length; i++) {
+				$("res14").append(data[i].productName + "<br>");
+			}
+		}
+	});
+});
+
+$("#btn15").click(function() {
+	const cid = $("#categoryIdInput").val();
+	$.ajax("/sub39/link14?cid=" + cid, {
+		success: function(data) {
+			$("#res15").empty();
+			$("#res15").appemd(`
+				<table class="table">
+					<thead>
+						<tr>
+							<th>
+							<th>
+								상품명
+							</th>
+							<th>
+								가격
+							</th>
+						</tr>
+					</thead>
+				</table>
+			`);
+			$("#res15 >.table").append("<tbody />");
+			for (let i = 0; i < data.length; i++) {
+				$("#res15 tbody")
+				.append(`
+					<tr>
+						<td>
+							${data[i].productName}
+						</td>
+						<td>
+							${data[i].price}
+						</td>
+					</tr>
+				`);
+			}
+		}
+	});
+});
