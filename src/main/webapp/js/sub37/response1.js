@@ -33,3 +33,11 @@ $("#btn8").click(function() {
 $("#btn9").click(function() {
 	$.ajax("/sub37/link9");
 });
+
+$("#btn10").click(function() {
+	$.ajax("/sub37/link10");
+});
+
+$("#btn11").click(function() {
+	$.ajax("/sub37/link11");
+});

@@ -78,4 +78,26 @@ public class Controller37 {
 	
 		return LocalTime.now().toString();
 	}
+	
+	@GetMapping("link10")
+	@ResponseBody()
+	public String method10() {
+		String data = """
+				{"name" : "lee", "age" : 30}
+				""";
+		return data;
+	}
+	
+	@GetMapping("link1")
+	@ResponseBody()
+	public ResponseEntity<String> method11() {
+		String data = """
+				{"name" : "lee", "age" : 30}
+				""";
+		
+		HttpHeaders header = new HttpHeaders();
+		header.set("Content-Type", "application/json");
+		
+		return new ResponseEntity(data, header, 200);
+	}
 }
