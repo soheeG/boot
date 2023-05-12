@@ -41,3 +41,35 @@ $("#btn10").click(function() {
 $("#btn11").click(function() {
 	$.ajax("/sub37/link11");
 });
+
+$("#btn12").click(function() {
+	$.ajax("/sub37/link12");
+});
+
+$("#btn13").click(function() {
+	$.ajax("/sub37/link13");
+});
+
+$("#btn14").click(function() {
+	$.ajax("/sub37/link14");
+});
+
+$("#btn15").click(function() {
+	$.ajax("/sub37/link15");
+});
+
+$("#btn16").click(function() {
+	$.ajax("/sub37/link15");
+});
+
+$("#btn17").click(function() {
+	$.ajax("/sub37/link15");
+});
+
+$("#btn18").click(function() {
+	$.ajax("/sub37/link15");
+});
+
+$("#btn19").click(function() {
+	$.ajax("/sub37/link15");
+});

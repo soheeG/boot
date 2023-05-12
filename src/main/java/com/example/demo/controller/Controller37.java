@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.time.*;
+import java.util.*;
 
 import org.springframework.http.*;
 import org.springframework.stereotype.*;
@@ -99,5 +100,109 @@ public class Controller37 {
 		header.set("Content-Type", "application/json");
 		
 		return new ResponseEntity(data, header, 200);
+	}
+	
+	@GetMapping("link12")
+	@ResponseBody // + 리턴 타입이 Map, JavaBean 이면, json string으로 변환
+	// 그리고 Content-Type header도 application/json으로 셋팅
+	public Map<String, Object> method12() {
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("name", "박지성");
+		map.put("age", 40);
+		
+		return map;
+	}
+	
+	@GetMapping("link13")
+	@ResponseBody
+	public Map<String, Object> method13() {
+		
+		var map = new HashMap<String, Object>();
+		map.put("adderss", "seoul");
+		map.put("price", 3.14);
+		
+		return map;
+	}
+	
+	@GetMapping("link14")
+	@ResponseBody
+	public Map<String, Object> method14() {
+		var data = new HashMap<String, Object>();
+		data.put("name", "차범근");
+		data.put("score", 8.88);
+		data.put("married", true);
+		data.put("position", null);
+		data.put("child", List.of("차두리", "차하나"));
+		data.put("food", Map.of("beverage", "coke", "meal", "chicken"));
+
+		return data;
+	}
+	
+	static class Dto1 {
+		public String getName() {
+			return "강백호";
+		}
+		public Integer getAge() {
+			return 33;
+		}
+	}
+	
+	@GetMapping("link15")
+	@ResponseBody
+	public Dto1 method15() {
+		Dto1 data = new Dto1();
+		
+		return data;
+	}
+	
+	static class Dto2 {
+		public String getCity() {
+			return "jeju";
+		}
+		public Double getScore() {
+			return 3.3;
+		}
+		public boolean isCap() {
+			return true;
+		}
+		public List<String> getFood() {
+			return List.of("pizza", "chicken", "burger");
+		}
+		public Dto1 getSub1() {
+			return new Dto1();
+		}
+		public Map<String, Object> getSub2() {
+			return Map.of("model", List.of("abc", "def"), "price", 3.14 );
+		}
+	}
+	
+	@GetMapping("link16")
+	@ResponseBody
+	public Dto2 method16() {
+		
+		return new Dto2();
+	}
+	
+	@GetMapping("link17")
+	@ResponseBody
+	public List<String> method17() {
+		
+		return List.of("java", "css", "html");
+	}
+	
+	@GetMapping("link18")
+	@ResponseBody
+	public List<Map<String, Object>> method18() {
+		
+		return List.of(Map.of("name", "강백호"),
+				Map.of("name", "채치수"),
+				Map.of("name", "정대만"));
+	}
+	
+	@GetMapping("link19")
+	@ResponseBody
+	public List<Dto2> method19() {
+		return List.of(new Dto2(), new Dto2());
 	}
 }
