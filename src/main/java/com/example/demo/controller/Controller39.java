@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.time.*;
+import java.util.*;
 
 import org.springframework.http.*;
 import org.springframework.stereotype.*;
@@ -54,7 +55,10 @@ public class Controller39 {
 	@GetMapping("link9")
 	@ResponseBody 
 	public String method9() {
-		return "hello ajax!";
+//		return "hello ajax!";
+		return """
+				{"name" : "채치수", "age" : 30}
+				""";
 	}
 	
 	@GetMapping("link10")
@@ -62,5 +66,17 @@ public class Controller39 {
 	public String method10() {
 		String data = LocalTime.now().toString();
 		return data;
+	}
+	
+	@GetMapping("link11")
+	@ResponseBody
+	public Map<String, Object> method11() {
+		return Map.of("name", "채소연", "age", 20);
+	}
+	
+	@GetMapping("link12")
+	@ResponseBody
+	public Map<String, Object> method12() {
+		return Map.of("address", "gangnam", "city", "seoul", "phone", "iphone");
 	}
 }

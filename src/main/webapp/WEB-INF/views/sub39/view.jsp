@@ -38,9 +38,18 @@
 	</div>
 	<div>
 		<button id="btn9">본문이 있는 성공 응답</button>
+		<div id="res9"></div>
 	</div>
 	<div>
 		<button id="btn10">현재 시간 응답</button>
+		<div id="res10"></div>
+	</div>
+	<div>
+		<button id="btn11">json 응답</button>
+		<div id="res11"></div>
+	</div>
+	<div>
+		<button id="btn12">json 응답</button>
 	</div>
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
