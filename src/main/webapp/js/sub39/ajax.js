@@ -115,10 +115,22 @@ $("#btn11").click(function() {
 
 $("#btn12").click(function() {
 	$.ajax("/sub39/link12", {
+		//content-type : application/json
+		//body : {"address", "gangnam", "city", "seoul", "phone", "iphone"}
 		success: function(data) {
 			console.log(data.address);
 			console.log(data.city);
 			console.log(data.phone);
+		}
+	});
+});
+
+$("#btn13").click(function() {
+	$.ajax("/sub39/link13", {
+		success: function() {
+			for (let i = 0; i < data.length; i++) {
+				console.log(i);
+			}
 		}
 	});
 });
