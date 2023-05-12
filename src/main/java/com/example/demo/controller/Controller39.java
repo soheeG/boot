@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.time.*;
+
 import org.springframework.http.*;
 import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
@@ -49,4 +51,16 @@ public class Controller39 {
 	}
 	*/
 	
+	@GetMapping("link9")
+	@ResponseBody 
+	public String method9() {
+		return "hello ajax!";
+	}
+	
+	@GetMapping("link10")
+	@ResponseBody
+	public String method10() {
+		String data = LocalTime.now().toString();
+		return data;
+	}
 }
