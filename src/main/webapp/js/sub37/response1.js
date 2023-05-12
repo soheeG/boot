@@ -77,3 +77,21 @@ $("#btn19").click(function() {
 $("#btn20").click(function() {
 	$.ajax("/sub37/link20");
 });
+
+$("#btn21").click(function() {
+	$.ajax("/sub37/link21");
+});
+
+$("#btn22").click(function() {
+	const cid = $("#categoryIdInput").val();
+	
+	$.ajax("/sub38/link22?cid=" + cid)
+	.done(function(data) {
+		const list = $("#productList");
+		list.empty();
+		
+		data.forEach(function(product) {
+			list.append(`<li>${product.productName}</li>`);
+		})
+	});
+});
