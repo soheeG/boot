@@ -107,4 +107,5 @@ public class Controller39 {
 	public List<Dto08> method21(Integer cid) {
 		return mapper02.sql7(cid);
 	}
+	
 }
